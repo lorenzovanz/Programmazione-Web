@@ -1,0 +1,57 @@
+use bilancio_familiare;
+
+INSERIMENTO UTENTI
+
+db.utenti.insertMany([
+  {
+    id: 1,
+    username: 'Giovanni66',
+    nome: 'Giovanni',
+    cognome: 'Rossi',
+    password: '$2a$10$7G4mVFqle5Z7nJb3X7P/uOYJvXBJh1o5f3Hd2X6lZOo4GyOH9RVni'
+  },
+  {
+    id: 2,
+    username: 'Maria05',
+    nome: 'Maria',
+    cognome: 'Bianchi',
+    password: '$2a$10$3Hl/TFkQqk1WwGZQmzLXUuUo3JzO9p5nQFmn9Q/1y3WmKOsJpAzum'
+  },
+  {
+    id: 3,
+    username: 'Luca33',
+    nome: 'Luca',
+    cognome: 'Verdi',
+    password: '$2a$10$aB7o/XSF5z/dl4PU.oeOcOK5XlI8.pMne6r5E8Qb9K5GhSkzVcI7W'
+  },
+  {
+    id: 4,
+    username: 'Francesca02',
+    nome: 'Francesca',
+    cognome: 'Esposito',
+    password: '$2a$10$zBX/LPW3rVFV0tE4LBdXQ.vZzJeJ9PpmNVU76/BwN6Xj4aZZfTrfG'
+  },
+  {
+    id: 5,
+    username: 'Marco11',
+    nome: 'Marco',
+    cognome: 'Ferrari',
+    password: '$2a$10$gKQJ/ECW.oaV1Eph7O1/jW5bTz5bRvNz6nFoW1vXmbNh1oGVv7R5K'
+  }
+]);
+
+
+INSERIMENTO SPESE
+
+db.spese.insert({
+    id: 1,
+    data: '2024-05',
+    categoria: 'Famiglia',
+    descrizione: 'Uscita in città',
+    costo_totale: 60,
+    utente_creatore: { utente: 3, quota: 22.5 },
+    partecipanti: [ { utente: 2, quota: 7.5 }, { utente: 1, quota: 30 } ]
+  });
+
+
+Poi procedere con la registrazione di un nuovo utente
