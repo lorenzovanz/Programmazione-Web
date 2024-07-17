@@ -1,0 +1,18 @@
+services:
+  server_vanz:
+    container_name: server_vanz
+    build: .
+    command: nodemon --watch . -e js server.js
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/var/www
+    links:
+      - "mongo_vanz:mongohost"
+  mongo_vanz:
+    container_name: mongo_vanz
+    image: mongo:latest
+    volumes:
+      - ./mongo_data:/data/db
+    ports:
+      - "27017:27017"
